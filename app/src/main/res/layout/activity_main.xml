@@ -8,13 +8,13 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/título"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="cHIVdren"
-        android:textSize="80dp"
-        android:textColor="#2196F3"
+        android:textColor="@color/colorAccent"
+        android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
