@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "379555823260",
+    "firebase_url": "https://dbchivdren-71d60.firebaseio.com",
+    "project_id": "dbchivdren-71d60",
+    "storage_bucket": "dbchivdren-71d60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379555823260:android:addd6e69a7833c665fb759",
+        "android_client_info": {
+          "package_name": "com.example.chivdrenproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "379555823260-gibivaqe0ecj6orngnsrn1tue3odrajv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chivdrenproject",
+            "certificate_hash": "72ac76e32b6140072fe37c8590e0c94a65d96b62"
+          }
+        },
+        {
+          "client_id": "379555823260-6sisbijp7l29cag5bv5tc8ie0hlnunrc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAIxqwGmcYsEaqw869ClAdcDbCm3AAJzos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "379555823260-6sisbijp7l29cag5bv5tc8ie0hlnunrc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
