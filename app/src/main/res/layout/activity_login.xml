@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:paddingStart="4dp"
-        android:textColor="#F00303"
+        android:textColor="#3F51B5"
         android:text="Esqueci a senha"
         app:layout_constraintStart_toStartOf="@+id/btLogin"
         app:layout_constraintTop_toBottomOf="@+id/btLogin" />
@@ -68,7 +68,7 @@
     <TextView
         android:id="@+id/tvAddAccount"
         android:paddingEnd="4dp"
-        android:textColor="#F00303"
+        android:textColor="#3F51B5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
