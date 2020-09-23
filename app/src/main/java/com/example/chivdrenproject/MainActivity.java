@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         tvAddAccount = findViewById(R.id.tvAddAccount);
 
         btLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 doLogin();
             }
@@ -51,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
 
         tvAddAccount.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),RegisterActivity.class);
-                startActivity(i);
+            public void onClick(View v) {
+                Intent it = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(it);
             }
         });
     }
@@ -91,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null)
+        if(currentUser == null)
         {
             startMainMenuScreen(currentUser);
         }
@@ -105,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
     private void startMainMenuScreen(FirebaseUser currentUser) {
         String msg = "Iniciando tela principal do app";
         Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
+
+        Intent it = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(it);
+
     }
 
 }
