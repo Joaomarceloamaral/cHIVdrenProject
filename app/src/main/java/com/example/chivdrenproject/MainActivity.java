@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     TextView tvAddAccount;
+    TextView tvForgotPassword;
     EditText tilEmail;
     EditText tilPassword;
     Button btLogin;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         tilPassword = findViewById(R.id.tilPassword);
         btLogin = findViewById(R.id.btLogin);
         tvAddAccount = findViewById(R.id.tvAddAccount);
+        tvForgotPassword = findViewById(R.id.tvForgotPassword);
 
         btLogin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -55,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
+
     }
 
     private void doLogin(){
@@ -90,10 +93,8 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        currentUser = null;
         if(currentUser != null)
         {
-            startMainMenuScreen(currentUser);
         }
         else
         {
@@ -103,9 +104,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void startMainMenuScreen(FirebaseUser currentUser) {
-        String msg = "Iniciando tela principal do app";
-        Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
-
         Intent it = new Intent(MainActivity.this, HomeActivity.class);
         startActivity(it);
     }
