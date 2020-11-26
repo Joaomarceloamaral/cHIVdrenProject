@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +26,11 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
-    TextView tvAddAccount;
+    ImageButton tvAddAccount;
     TextView tvForgotPassword;
     EditText tilEmail;
     EditText tilPassword;
-    Button btLogin;
+    ImageButton btLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){

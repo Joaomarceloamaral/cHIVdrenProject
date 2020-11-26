@@ -2,6 +2,7 @@ package com.example.chivdrenproject;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -18,10 +19,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 
 public class RegisterActivity extends Activity {
     EditText tilBirthDate;
@@ -29,9 +33,12 @@ public class RegisterActivity extends Activity {
     EditText tilEmail;
     EditText tilPassword;
     Button btRegister;
+
+
+
     FirebaseAuth mAuth;
     String TAG = "RegisterActivity";
-
+        private DatabaseReference mDatabase;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,10 +71,10 @@ public class RegisterActivity extends Activity {
         btRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String name = tilName.getText().toString();
-                String birthDate = tilBirthDate.getText().toString();
-                String email = tilEmail.getText().toString();
-                String password = tilPassword.getText().toString();
+                String name = tilName.getText().toString().trim();
+                String birthDate = tilBirthDate.getText().toString().trim();
+                String email = tilEmail.getText().toString().trim();
+                String password = tilPassword.getText().toString().trim();
 
                 registerNewUser(name, birthDate, email, password);
             }
@@ -96,8 +103,8 @@ public class RegisterActivity extends Activity {
         return dateStr;
     }
 
-    private void registerNewUser(String name, String date, String email, String password){
-
+    private void registerNewUser(final String name, final String date, String email, String password){
+mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -105,27 +112,40 @@ public class RegisterActivity extends Activity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
+                            //////
+
                             FirebaseUser user = mAuth.getCurrentUser();
-                            finishRegister(user);
+                            String email = user.getEmail();
+                            String uid = user.getUid();
+                            HashMap<Object,String> hashMap = new HashMap<>();
+                            hashMap.put("email", email);
+                            hashMap.put("uidemail", uid);
+                            hashMap.put("name",name);
+                            hashMap.put("date", date);
+                            // firebase database instance
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+                            DatabaseReference reference = database.getReference("Users");
+
+                            reference.child(uid).setValue(hashMap);
+
+                            Toast.makeText(RegisterActivity.this,"Registrando...\n"+user.getEmail(),Toast.LENGTH_SHORT);
+
+                            startActivity(new Intent(RegisterActivity.this,MainActivity.class));
+                            finish();
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             Toast.makeText(RegisterActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            finishRegister(null);
+
                         }
                     }
                 });
 
     }
 
-    private void finishRegister(FirebaseUser firebaseUser){
-        if(firebaseUser == null){
-            Toast.makeText(RegisterActivity.this, "Erro ao criar o usuário.", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        Toast.makeText(RegisterActivity.this, "Usuário cadastrado.", Toast.LENGTH_SHORT).show();
-        finish();
 
-    }
 }

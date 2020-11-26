@@ -1,33 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+
+    android:background="@drawable/bg"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sair"
+        android:layout_gravity="end"
+        android:background="@drawable/sair2"/>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/welcomeTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home cHIVdren"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.067" />
+        android:fontFamily="@font/andigiana"
+        android:text="Olá, Seja Bem-Vindo(a) Nome !"
+        android:textSize="20sp"
+        android:layout_margin="20sp"
+        android:textColor="#FFEB3B"/>
 
+    <ImageButton
+        android:id="@+id/remedios"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+
+        android:background="@drawable/caixa"
+        android:src="@drawable/pilula"
+        />
     <Button
-        android:id="@+id/button"
-        android:layout_width="346dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="172dp"
-        android:text="Cadastrar remedios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:background="@drawable/caixa2"
+        android:text="EU"
+        android:id="@+id/eu"
+        android:textSize="40sp"
+        android:fontFamily="@font/andigiana"
+        android:textColor="#FFEB3B"
+        android:layout_marginTop="10dp"
+        />
+</LinearLayout>

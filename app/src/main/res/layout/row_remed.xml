@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="390dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    android:padding="5dp"
+    android:layout_gravity="center_horizontal|center_vertical"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="#FFEB3B">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/layout"
+        android:background="#FFEB3B"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:id="@+id/RnomeTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nome do remédio"
+                android:textSize="16sp"
+                android:fontFamily="@font/andigiana"
+                android:textColor="#9C27B0"/>
+
+            <ImageButton
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/excluirRem"
+                android:src="@drawable/sair"
+                android:background="@null"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/RdescrTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#9C27B0"
+            android:textSize="14sp"
+            android:background="#fff"
+            android:text="descrição do medicamento"
+            android:fontFamily="sans-serif-condensed"
+            android:layout_margin="10sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <TextView
+                android:id="@+id/RhoraTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#9C27B0"
+                android:textSize="20sp"
+                android:text="12:20"
+                android:fontFamily="@font/andigiana"
+                android:layout_margin="10sp"/>
+            <ImageButton
+                android:id="@+id/editarbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/editar"
+                android:background="@null"
+                android:layout_gravity="center"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

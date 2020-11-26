@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context=".PerfilActivity">
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/voltar"
+        android:background="@drawable/voltar"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meu Perfil"
+        android:textAlignment="center"
+        android:fontFamily="@font/andigiana"
+        android:textSize="25dp"
+        android:textColor="#fff"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        app:cardCornerRadius="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_margin="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Meu nome:"
+                android:fontFamily="@font/andigiana"
+                android:layout_margin="5sp"
+                android:textSize="20sp"
+                android:id="@+id/nameTv"
+                android:textColor="#FFEB3B"/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Minha data de nascimento"
+                android:fontFamily="@font/andigiana"
+                android:textSize="20sp"
+                android:id="@+id/dataTv"
+                android:layout_margin="5sp"
+                android:textColor="#FFEB3B"/>
+            <TextView
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Meu email:"
+                android:fontFamily="@font/andigiana"
+                android:textSize="20sp"
+                android:layout_margin="5sp"
+                android:id="@+id/emailTv"
+                android:textColor="#FFEB3B"/>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

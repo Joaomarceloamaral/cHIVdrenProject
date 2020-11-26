@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF"
+    android:background="@drawable/bg"
     tools:context=".MainActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -19,11 +19,13 @@
         android:layout_width="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/retangulo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
         android:inputType="textEmailAddress"
+        android:padding="5dp"
         android:hint="Email">
 
     </EditText>
@@ -31,26 +33,34 @@
     <EditText
         android:id="@+id/tilPassword"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/retangulo"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilEmail"
         android:inputType="textPassword"
-        android:hint="Senha">
+        android:hint="Senha"
+        android:layout_margin="30sp"
+        android:padding="5dp"
+        android:textColor="#000">
 
     </EditText>
 
-    <Button
+    <ImageButton
         android:id="@+id/btLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="173dp"
+        android:layout_height="127dp"
+
         android:layout_marginStart="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Entrar"
+
+        android:background="@null"
+        android:src="@drawable/entrar_botao"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
@@ -58,29 +68,33 @@
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         android:paddingStart="4dp"
-        android:textColor="#3F51B5"
         android:text="Esqueci a senha"
-        app:layout_constraintStart_toStartOf="@+id/btLogin"
+        android:textColor="#FFEB3B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btLogin" />
 
-    <TextView
+    <ImageButton
         android:id="@+id/tvAddAccount"
-        android:paddingEnd="4dp"
-        android:textColor="#3F51B5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Cadastre-se"
-        app:layout_constraintEnd_toEndOf="@+id/btLogin"
-        app:layout_constraintTop_toBottomOf="@+id/btLogin" />
+        android:layout_width="111dp"
+        android:layout_height="105dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/cadastrar"
+        android:textColor="#FFEB3B"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login cHIVdren"
+        android:text=" Login"
+        android:fontFamily="@font/andigiana"
+        android:textColor="#FFE436"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
